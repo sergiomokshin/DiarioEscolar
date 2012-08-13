@@ -1,0 +1,32 @@
+﻿@model DiarioEscolar.Models.AnoSerie
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>AnoSerie</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ano)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ano)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Serie)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Serie)
+    </div>    
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiarioEscolar", "DiarioEscolar\DiarioEscolar.csproj", "{105140CF-653B-4956-B7BF-250B550C8876}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiarioEscolar.Tests", "DiarioEscolar.Tests\DiarioEscolar.Tests.csproj", "{5AA4029C-E7D5-4935-9970-A450AF549CFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{105140CF-653B-4956-B7BF-250B550C8876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105140CF-653B-4956-B7BF-250B550C8876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105140CF-653B-4956-B7BF-250B550C8876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105140CF-653B-4956-B7BF-250B550C8876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AA4029C-E7D5-4935-9970-A450AF549CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AA4029C-E7D5-4935-9970-A450AF549CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AA4029C-E7D5-4935-9970-A450AF549CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AA4029C-E7D5-4935-9970-A450AF549CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

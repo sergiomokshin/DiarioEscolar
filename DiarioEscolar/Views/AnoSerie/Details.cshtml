@@ -1,0 +1,29 @@
+﻿@model DiarioEscolar.Models.AnoSerie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AnoSerie</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ano)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ano)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Serie)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Serie)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.AnoSerieId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

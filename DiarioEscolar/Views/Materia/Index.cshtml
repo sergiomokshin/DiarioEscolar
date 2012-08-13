@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DiarioEscolar.Models.Materia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = ViewBag.AnoSerieId })
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MateriaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MateriaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MateriaId })
+        </td>
+    </tr>
+}
+
+</table>
