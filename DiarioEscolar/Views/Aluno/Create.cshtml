@@ -8,6 +8,7 @@
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
+    @Html.Hidden("AnoSerie.AnoSerieId", (int)ViewBag.AnoSerieId)
 
     <fieldset>
         <legend>Aluno</legend>

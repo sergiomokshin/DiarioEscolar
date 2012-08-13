@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { id = ViewBag.AnoSerieId })
 </p>
 <table>
     <tr>
@@ -37,3 +37,10 @@
 }
 
 </table>
+
+@using (Html.BeginForm()) {
+    <p> 
+        @Html.ActionLink("Back to List", "Index", "AnoSerie")
+    </p>
+}
+

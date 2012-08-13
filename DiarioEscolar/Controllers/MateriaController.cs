@@ -38,6 +38,7 @@ namespace DiarioEscolar.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AnoSerieId = materia.AnoSerie.AnoSerieId;
             return View(materia);
         }
 
@@ -106,6 +107,7 @@ namespace DiarioEscolar.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AnoSerieId = materia.AnoSerie.AnoSerieId;
             return View(materia);
         }
 

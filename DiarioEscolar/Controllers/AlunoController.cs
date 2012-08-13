@@ -16,9 +16,16 @@ namespace DiarioEscolar.Controllers
         //
         // GET: /Aluno/
 
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View(db.Alunos.ToList());
+            var alunos = from m in db.Alunos
+                           select m;
+            alunos = alunos.Where(s => s.AnoSerie.AnoSerieId == id);
+
+            ViewBag.AnoSerieId = id;
+
+            return View(alunos);
+
         }
 
         //
@@ -31,14 +38,16 @@ namespace DiarioEscolar.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AnoSerieId = aluno.AnoSerie.AnoSerieId;
             return View(aluno);
         }
 
         //
         // GET: /Aluno/Create
 
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            ViewBag.AnoSerieId = id;
             return View();
         }
 
@@ -48,14 +57,14 @@ namespace DiarioEscolar.Controllers
         [HttpPost]
         public ActionResult Create(Aluno aluno)
         {
-            if (ModelState.IsValid)
-            {
-                db.Alunos.Add(aluno);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
 
-            return View(aluno);
+            var AnoSerie = db.AnoSeries.Find(aluno.AnoSerie.AnoSerieId);
+            aluno.AnoSerie = AnoSerie;
+
+            db.Alunos.Add(aluno);
+            db.SaveChanges();
+            return RedirectToAction("Index", new { id = aluno.AnoSerie.AnoSerieId });
+
         }
 
         //
@@ -68,6 +77,7 @@ namespace DiarioEscolar.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AnoSerieId = aluno.AnoSerie.AnoSerieId;
             return View(aluno);
         }
 
@@ -77,13 +87,13 @@ namespace DiarioEscolar.Controllers
         [HttpPost]
         public ActionResult Edit(Aluno aluno)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(aluno).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(aluno);
+            var AnoSerie = db.AnoSeries.Find(aluno.AnoSerie.AnoSerieId);
+            aluno.AnoSerie = AnoSerie;
+
+            db.Entry(aluno).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index", new { id = aluno.AnoSerie.AnoSerieId });
+
         }
 
         //
@@ -96,6 +106,7 @@ namespace DiarioEscolar.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AnoSerieId = aluno.AnoSerie.AnoSerieId;
             return View(aluno);
         }
 
