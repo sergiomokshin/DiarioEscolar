@@ -137,6 +137,7 @@
     <Compile Include="Controllers\AnoSerieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
+    <Compile Include="Controllers\NotaFaltaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,8 +146,12 @@
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\AnoSerie.cs" />
     <Compile Include="Models\DiarioEscolarEntities.cs" />
+    <Compile Include="Models\InitializeData.cs" />
     <Compile Include="Models\Materia.cs" />
+    <Compile Include="Models\NotaFalta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AnoSerieViewModel.cs" />
+    <Compile Include="ViewModels\NotaFaltaAlunoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\DiarioEscolar.sdf" />
@@ -251,6 +256,11 @@
     <Content Include="Views\AnoSerie\Create.cshtml" />
     <Content Include="Views\AnoSerie\Edit.cshtml" />
     <Content Include="Views\AnoSerie\Delete.cshtml" />
+    <Content Include="Views\NotaFalta\Index.cshtml" />
+    <Content Include="Views\NotaFalta\Details.cshtml" />
+    <Content Include="Views\NotaFalta\Create.cshtml" />
+    <Content Include="Views\NotaFalta\Edit.cshtml" />
+    <Content Include="Views\NotaFalta\Delete.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

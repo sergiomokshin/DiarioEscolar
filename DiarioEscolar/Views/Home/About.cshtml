@@ -1,34 +1,31 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Ajuda";
 }
-
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
-
-<article>
-    <p>
-        Use this area to provide additional information.
-    </p>
-
-    <p>
-        Use this area to provide additional information.
-    </p>
-
-    <p>
-        Use this area to provide additional information.
-    </p>
-</article>
-
-<aside>
-    <h3>Aside Title</h3>
-    <p>
-        Use this area to provide additional information.
-    </p>
-    <ul>
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-    </ul>
-</aside>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                Ferramenta para facilitar o acompanhamentos escolar dos alunos.
+            </p>
+        </div>
+    </section>
+}
+<h3>Como funciona:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Cadastro</h5>
+            Cadastre as séries, matérias e alunos.
+        </li>
+    <li class="two">
+        <h5>Lançamentos</h5>
+            Lance as notas e faltas dos alunos por matéria.
+        </li>
+    <li class="three">
+        <h5>Relatórios de acompanhamento</h5>
+            Relatórios para cálculos de média e faltas por aluno, média por série e matéria, ranking com melhores e piores alunos.
+        </li>
+</ol>

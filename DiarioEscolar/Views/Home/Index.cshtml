@@ -14,18 +14,16 @@
         </div>
     </section>
 }
-<h3>Como funciona:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Cadastro</h5>
-            Cadastre as séries, matérias e alunos.
-        </li>
-    <li class="two">
-        <h5>Lançamentos</h5>
-            Lance as notas e faltas dos alunos por matéria.
-        </li>
-    <li class="three">
-        <h5>Relatórios de acompanhamento</h5>
-            Relatórios para cálculos de média e faltas por aluno, média por série e matéria, ranking com melhores e piores alunos.
-        </li>
-</ol>
+
+
+@foreach (var anoSerie in ViewBag.AnoSeries){
+    
+    <p>
+        <h5>@anoSerie.Serie</h5>
+        @foreach (DiarioEscolar.ViewModels.MateriaViewModel materia in anoSerie.Materias)
+            {           
+                @Html.ActionLink(materia.Descricao, "Edit", "NotaFalta", new { AnoSerieId = anoSerie.AnoSerieId, MateriaId = materia.MateriaId }, null)        
+            }
+
+    </p>            
+    }

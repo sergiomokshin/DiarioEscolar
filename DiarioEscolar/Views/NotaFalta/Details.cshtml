@@ -1,0 +1,85 @@
+﻿@model DiarioEscolar.Models.NotaFalta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>NotaFalta</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nota1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nota1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Falta1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Falta1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nota2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nota2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Falta2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Falta2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nota3)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nota3)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Falta3)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Falta3)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nota4)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nota4)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Falta4)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Falta4)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Recuperacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Recuperacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MediaFinal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MediaFinal)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.NotaFaltaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

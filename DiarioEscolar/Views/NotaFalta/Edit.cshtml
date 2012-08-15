@@ -1,0 +1,113 @@
+﻿@model DiarioEscolar.Models.NotaFalta
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>@ViewBag.Materia.Descricao</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>NotaFalta</legend>
+       
+          <table border="1" width="100%">
+            <tr>
+                <th>
+                    Aluno
+                </th>
+                <th>
+                    Nota
+                </th>
+                <th>
+                    Falta
+                </th>
+                <th>
+                    Nota 
+                </th>
+                <th>
+                    Falta
+                </th>
+                <th>
+                    Nota
+                </th>
+                <th>
+                    Falta
+                </th>
+                <th>
+                    Nota
+                </th>
+                <th>
+                    Falta
+                </th>
+                <th>
+                    Nota Recuperação    
+                </th>
+                <th>
+                    Total Faltas                
+                </th>
+                <th>
+                    Média Final
+                </th>
+            </tr>
+
+        @foreach (DiarioEscolar.ViewModels.NotaFaltaAlunoViewModel notaFalta in ViewBag.NotaFalta)
+        {
+            DiarioEscolar.ViewModels.NotaFaltaViewModel notaFaltaTemp = @notaFalta.NotaFaltaViewModel != null ? @notaFalta.NotaFaltaViewModel : ViewBag.notaFaltaDefault;
+                                   
+            <tr>
+                <td>
+                    @notaFalta.NomeAluno
+                </td>
+                <td>
+                    @notaFaltaTemp.Nota1
+                </td>
+                <td>
+                    @notaFaltaTemp.Falta1
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+        }
+
+        </table>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

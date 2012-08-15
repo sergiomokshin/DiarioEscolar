@@ -16,6 +16,9 @@ namespace DiarioEscolar
     {
         protected void Application_Start()
         {
+            System.Data.Entity.Database.SetInitializer(
+               new DiarioEscolar.Models.InitializeData());
+
             AreaRegistration.RegisterAllAreas();
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

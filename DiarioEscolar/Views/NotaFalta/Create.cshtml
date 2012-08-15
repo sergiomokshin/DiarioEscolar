@@ -1,0 +1,107 @@
+﻿@model DiarioEscolar.Models.NotaFalta
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>NotaFalta</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nota1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nota1)
+            @Html.ValidationMessageFor(model => model.Nota1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Falta1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Falta1)
+            @Html.ValidationMessageFor(model => model.Falta1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nota2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nota2)
+            @Html.ValidationMessageFor(model => model.Nota2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Falta2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Falta2)
+            @Html.ValidationMessageFor(model => model.Falta2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nota3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nota3)
+            @Html.ValidationMessageFor(model => model.Nota3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Falta3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Falta3)
+            @Html.ValidationMessageFor(model => model.Falta3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nota4)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nota4)
+            @Html.ValidationMessageFor(model => model.Nota4)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Falta4)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Falta4)
+            @Html.ValidationMessageFor(model => model.Falta4)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Recuperacao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Recuperacao)
+            @Html.ValidationMessageFor(model => model.Recuperacao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MediaFinal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MediaFinal)
+            @Html.ValidationMessageFor(model => model.MediaFinal)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -12,10 +12,13 @@ namespace DiarioEscolar.Models
         public DbSet<AnoSerie> AnoSeries { get; set; }
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Materia> Materias { get; set; }
+        public DbSet<NotaFalta> NotaFaltas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();        
         }
+
+        
     }    
 }

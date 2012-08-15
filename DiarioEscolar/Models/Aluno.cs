@@ -22,5 +22,7 @@ namespace DiarioEscolar.Models
         public string Nome { get; set; }
 
         public virtual AnoSerie AnoSerie { get; set; }
+
+
     }
 }
