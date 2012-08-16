@@ -1,113 +1,134 @@
-﻿@model DiarioEscolar.Models.NotaFalta
+﻿@model IEnumerable<DiarioEscolar.ViewModels.NotaFaltaAlunoViewModel>
 
 @{
-    ViewBag.Title = "Edit";
+	ViewBag.Title = "Edit";
 }
+
+<style>
+
+.text_grid
+{
+	width:30px;
+}
+
+</style>
 
 <h2>@ViewBag.Materia.Descricao</h2>
 
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
+@using (Html.BeginForm())
+{
+	@Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>NotaFalta</legend>
-       
-          <table border="1" width="100%">
-            <tr>
-                <th>
-                    Aluno
-                </th>
-                <th>
-                    Nota
-                </th>
-                <th>
-                    Falta
-                </th>
-                <th>
-                    Nota 
-                </th>
-                <th>
-                    Falta
-                </th>
-                <th>
-                    Nota
-                </th>
-                <th>
-                    Falta
-                </th>
-                <th>
-                    Nota
-                </th>
-                <th>
-                    Falta
-                </th>
-                <th>
-                    Nota Recuperação    
-                </th>
-                <th>
-                    Total Faltas                
-                </th>
-                <th>
-                    Média Final
-                </th>
-            </tr>
+	<fieldset>
+		<legend>NotaFalta</legend>
+	   
+		  <table border="1" width="100%">
+			<tr>
+				<th>
+					Aluno
+				</th>
+				<th>
+					1 Bim
+				</th>
+				<th>
+					Faltas
+				</th>
+				<th>
+					2 Bim
+				</th>
+				<th>
+					Faltas
+				</th>
+				<th>
+					3 Bim
+				</th>
+				<th>
+					Faltas
+				</th>
+				<th>
+					4 Bim
+				</th>
+				<th>
+					Faltas
+				</th>
+				<th>
+					Nota Recuperação    
+				</th>
+				<th>
+					Total Faltas                
+				</th>
+				<th>
+					Média Final
+				</th>
+			</tr>
 
-        @foreach (DiarioEscolar.ViewModels.NotaFaltaAlunoViewModel notaFalta in ViewBag.NotaFalta)
-        {
-            DiarioEscolar.ViewModels.NotaFaltaViewModel notaFaltaTemp = @notaFalta.NotaFaltaViewModel != null ? @notaFalta.NotaFaltaViewModel : ViewBag.notaFaltaDefault;
-                                   
-            <tr>
-                <td>
-                    @notaFalta.NomeAluno
-                </td>
-                <td>
-                    @notaFaltaTemp.Nota1
-                </td>
-                <td>
-                    @notaFaltaTemp.Falta1
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-            </tr>
-        }
+		@{
+	int contador = 0;
+			
+			}
 
-        </table>
+		@foreach (var notaFalta in Model)
+		{
+			DiarioEscolar.ViewModels.NotaFaltaViewModel notaFaltaTemp = @notaFalta.NotaFaltaViewModel != null ? @notaFalta.NotaFaltaViewModel : ViewBag.notaFaltaDefault;
+			<tr>
+				<td>
+					@notaFalta.NomeAluno
+					@Html.Hidden("notas[" + contador + "].AlunoId", notaFalta.AlunoId)
+					@Html.Hidden("notas[" + contador + "].MateriaId", notaFalta.MateriaId)
+                    @Html.Hidden("notas[" + contador + "].AnoSerieId", notaFalta.AnoSerieId)
+					@Html.Hidden("notas[" + contador + "].NotaFaltaViewModel.NotaFaltaId", notaFalta.NotaFaltaViewModel != null ? notaFalta.NotaFaltaViewModel.NotaFaltaId : 0)
+				</td>
+				<td>
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Nota1", notaFaltaTemp.Nota1, new { @style = "width: 30px;" })
+				</td>
+				<td>
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Falta1", notaFaltaTemp.Falta1, new { @style = "width: 30px;" })
+				</td>
+				 <td>
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Nota2", notaFaltaTemp.Nota2, new { @style = "width: 30px;" })
+				</td>
+				<td>
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Falta2", notaFaltaTemp.Falta1, new { @style = "width: 30px;" })
+				</td>
+				 <td>
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Nota3", notaFaltaTemp.Nota3, new { @style = "width: 30px;" })
+				</td>
+				<td>
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Falta3", notaFaltaTemp.Falta3, new { @style = "width: 30px;" })
+				</td>
+				 <td>
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Nota4", notaFaltaTemp.Nota4, new { @style = "width: 30px;" })
+				</td>
+				<td>
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Falta4", notaFaltaTemp.Falta4, new { @style = "width: 30px;" })
+				</td>
+			   <td>
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Falta3", notaFaltaTemp.Recuperacao, new { @style = "width: 30px;" })
+				</td>
+				 <td>
+				   @notaFaltaTemp.TotalFaltas
+				</td>
+				<td>
+				   @notaFaltaTemp.MediaFinal
+				</td>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
+			</tr>
+			
+			contador++;
+		}
+
+		</table>
+
+		<p>
+			<input type="submit" value="Save" />
+		</p>
+	</fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+	@Html.ActionLink("Back to List", "Index", "Home")
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/jqueryval")
 }

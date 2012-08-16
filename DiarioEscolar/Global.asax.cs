@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Threading;
+using System.Globalization;
 
 namespace DiarioEscolar
 {
@@ -24,10 +26,14 @@ namespace DiarioEscolar
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
             
+        }
 
+        protected void Application_BeginRequest(Object sender, EventArgs e)
+        {
 
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
         }
         
     }

@@ -63,13 +63,19 @@ namespace DiarioEscolar.Controllers
         // GET: /NotaFalta/Edit/5
 
         public ActionResult Edit(int AnoSerieId, int MateriaId)
+        {           
+            return View(GridNotas(AnoSerieId, MateriaId));
+        }
+
+        private IList<NotaFaltaAlunoViewModel> GridNotas(int AnoSerieId, int MateriaId)
         {
             var materia = db.Materias.Find(MateriaId);
 
             var notaFalta = (from alunos in db.Alunos
                              where alunos.AnoSerie.AnoSerieId == AnoSerieId
                              select new NotaFaltaAlunoViewModel()
-                             {                         
+                             {
+                                 AnoSerieId = AnoSerieId,
                                  DescricaoMateria = materia.Descricao,
                                  MateriaId = MateriaId,
                                  NomeAluno = alunos.Nome,
@@ -77,24 +83,25 @@ namespace DiarioEscolar.Controllers
                                  AlunoId = alunos.AlunoId,
                                  NotaFaltaViewModel = (from notafalta in db.NotaFaltas.DefaultIfEmpty()
                                                        where notafalta.Aluno.AlunoId == alunos.AlunoId
-                                                       && notafalta.Materia.MateriaId == MateriaId                                                             
-                                                       select new NotaFaltaViewModel(){   
-                              
-                                                                 NotaFaltaId = notafalta.NotaFaltaId,
-                                                                 Nota1 = notafalta.Nota1,
-                                                                 Falta1 = notafalta.Falta1,
-                                                                 Nota2 = notafalta.Nota2,
-                                                                 Falta2 = notafalta.Falta2,
-                                                                 Nota3 = notafalta.Nota3,
-                                                                 Falta3 = notafalta.Falta3,
-                                                                 Nota4 = notafalta.Nota4,
-                                                                 Falta4 = notafalta.Falta4,
-                                                                 Recuperacao = notafalta.Recuperacao,
-                                                                 MediaFinal = notafalta.MediaFinal
-                                                        }).FirstOrDefault()
+                                                       && notafalta.Materia.MateriaId == MateriaId
+                                                       select new NotaFaltaViewModel()
+                                                       {
+
+                                                           NotaFaltaId = notafalta.NotaFaltaId,
+                                                           Nota1 = notafalta.Nota1,
+                                                           Falta1 = notafalta.Falta1,
+                                                           Nota2 = notafalta.Nota2,
+                                                           Falta2 = notafalta.Falta2,
+                                                           Nota3 = notafalta.Nota3,
+                                                           Falta3 = notafalta.Falta3,
+                                                           Nota4 = notafalta.Nota4,
+                                                           Falta4 = notafalta.Falta4,
+                                                           Recuperacao = notafalta.Recuperacao,
+                                                           MediaFinal = notafalta.MediaFinal
+                                                       }).FirstOrDefault()
 
                              }).ToList();
-            ViewBag.NotaFalta = notaFalta;
+            //ViewBag.NotaFalta = notaFalta;
             ViewBag.Materia = materia;
 
 
@@ -111,26 +118,71 @@ namespace DiarioEscolar.Controllers
                 Recuperacao = 0,
                 MediaFinal = 0
             };
-            return View();
+
+            return notaFalta;
         }
 
         //
         // POST: /NotaFalta/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(NotaFalta notafalta)
+        public ActionResult Edit(IEnumerable<NotaFaltaAlunoViewModel> notas)
         {
-            if (ModelState.IsValid)
+            //TODO: Receber pela ViewModel principal
+            int AnoSerieId = 0;
+            int MateriaId = 0;
+            foreach (var nota in notas)
             {
-                db.Entry(notafalta).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                AnoSerieId = nota.AnoSerieId;
+                MateriaId = nota.MateriaId;
+
+                NotaFalta notaFalta;
+                if (nota.NotaFaltaViewModel.NotaFaltaId > 0)
+                {
+                    notaFalta = db.NotaFaltas.Find(nota.NotaFaltaViewModel.NotaFaltaId);
+                    AtribuiNotaFalta(notaFalta, nota.NotaFaltaViewModel);
+                    db.Entry(notaFalta).State = EntityState.Modified;
+                }
+                else
+                {
+                    notaFalta = new NotaFalta();
+                    Aluno aluno = db.Alunos.Find(nota.AlunoId);
+                    Materia materia = db.Materias.Find(nota.MateriaId);
+                    AnoSerie anoSerie = db.AnoSeries.Find(nota.AnoSerieId);
+
+                    notaFalta.Aluno = aluno;
+                    notaFalta.Materia = materia;
+                    notaFalta.AnoSerie = anoSerie;
+
+                    AtribuiNotaFalta(notaFalta, nota.NotaFaltaViewModel);
+                    db.NotaFaltas.Add(notaFalta);
+                
+                }
+
             }
-            return View(notafalta);
+
+            db.SaveChanges();
+
+            return View(GridNotas(AnoSerieId, MateriaId));
         }
 
         //
         // GET: /NotaFalta/Delete/5
+
+        private void AtribuiNotaFalta(NotaFalta notaFalta, NotaFaltaViewModel notaFaltaViewModel)
+        {
+            notaFalta.Nota1 = notaFaltaViewModel.Nota1;
+            notaFalta.Falta1 = notaFaltaViewModel.Falta1;
+            notaFalta.Nota2 = notaFaltaViewModel.Nota2;
+            notaFalta.Falta2 = notaFaltaViewModel.Falta2;
+            notaFalta.Nota3 = notaFaltaViewModel.Nota3;
+            notaFalta.Falta3 = notaFaltaViewModel.Falta3;
+            notaFalta.Nota4 = notaFaltaViewModel.Nota4;
+            notaFalta.Falta4 = notaFaltaViewModel.Falta4;
+
+            notaFalta.Recuperacao = notaFaltaViewModel.Recuperacao;                                 
+
+        }
 
         public ActionResult Delete(int id = 0)
         {

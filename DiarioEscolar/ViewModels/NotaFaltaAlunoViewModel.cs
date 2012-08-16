@@ -12,6 +12,9 @@ namespace DiarioEscolar.ViewModels
         {
             NotaFaltaViewModel = new NotaFaltaViewModel();
         }
+
+        public int AnoSerieId { get; set; }
+
         public string DescricaoMateria { get; set; }
 
         public int MateriaId { get; set; }
@@ -28,7 +31,7 @@ namespace DiarioEscolar.ViewModels
 
     public class NotaFaltaViewModel
     {
-        public int NotaFaltaId { get; set; }
+        public int? NotaFaltaId { get; set; }
 
         public decimal Nota1 { get; set; }
 
@@ -47,6 +50,14 @@ namespace DiarioEscolar.ViewModels
         public decimal Falta4 { get; set; }
 
         public decimal Recuperacao { get; set; }
+
+        public decimal TotalFaltas
+        {
+            get
+            {
+                return Falta1 + Falta2 + Falta3 + Falta4;
+            }
+        }
 
         public decimal MediaFinal { get; set; }
 
