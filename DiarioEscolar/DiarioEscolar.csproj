@@ -141,6 +141,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FlashMessageExtensions.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Aluno.cs" />
@@ -191,6 +192,8 @@
     <Content Include="Scripts\jquery-1.6.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jQuery.flashMessage.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
@@ -261,6 +264,7 @@
     <Content Include="Views\NotaFalta\Create.cshtml" />
     <Content Include="Views\NotaFalta\Edit.cshtml" />
     <Content Include="Views\NotaFalta\Delete.cshtml" />
+    <Content Include="Views\Shared\_Flash.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

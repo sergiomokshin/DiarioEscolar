@@ -10,6 +10,14 @@ namespace DiarioEscolar
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-1.*"));
 
+
+            bundles.Add(new ScriptBundle("~/bundles/cookie").Include(
+                        "~/Scripts/jquery.cookie.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/flash_message").Include(
+                        "~/Scripts/jQuery.flashMessage.js"));
+
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui*"));
 

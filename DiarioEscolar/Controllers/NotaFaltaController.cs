@@ -69,7 +69,9 @@ namespace DiarioEscolar.Controllers
 
         private IList<NotaFaltaAlunoViewModel> GridNotas(int AnoSerieId, int MateriaId)
         {
+            
             var materia = db.Materias.Find(MateriaId);
+            var anoSerie = db.AnoSeries.Find(AnoSerieId);
 
             var notaFalta = (from alunos in db.Alunos
                              where alunos.AnoSerie.AnoSerieId == AnoSerieId
@@ -103,6 +105,7 @@ namespace DiarioEscolar.Controllers
                              }).ToList();
             //ViewBag.NotaFalta = notaFalta;
             ViewBag.Materia = materia;
+            ViewBag.AnoSerie = anoSerie;
 
 
             ViewBag.notaFaltaDefault = new NotaFaltaViewModel()
@@ -171,6 +174,7 @@ namespace DiarioEscolar.Controllers
 
         private void AtribuiNotaFalta(NotaFalta notaFalta, NotaFaltaViewModel notaFaltaViewModel)
         {
+
             notaFalta.Nota1 = notaFaltaViewModel.Nota1;
             notaFalta.Falta1 = notaFaltaViewModel.Falta1;
             notaFalta.Nota2 = notaFaltaViewModel.Nota2;
@@ -180,7 +184,12 @@ namespace DiarioEscolar.Controllers
             notaFalta.Nota4 = notaFaltaViewModel.Nota4;
             notaFalta.Falta4 = notaFaltaViewModel.Falta4;
 
-            notaFalta.Recuperacao = notaFaltaViewModel.Recuperacao;                                 
+            notaFalta.Recuperacao = notaFaltaViewModel.Recuperacao;
+
+            if(notaFalta.Recuperacao > 0)
+                notaFalta.MediaFinal = notaFalta.Recuperacao;
+            else
+                notaFalta.MediaFinal = (notaFalta.Nota1 + notaFalta.Nota2 + notaFalta.Nota3 + notaFalta.Nota4)/4;
 
         }
 

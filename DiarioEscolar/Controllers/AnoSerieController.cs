@@ -56,7 +56,7 @@ namespace DiarioEscolar.Controllers
                 anoserie.ProviderUserKey = UserHelper.CurrentProviderUserKey();
                 db.AnoSeries.Add(anoserie);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index").Success("Série incluída com sucesso!"); ;
             }
 
             return View(anoserie);
@@ -85,7 +85,7 @@ namespace DiarioEscolar.Controllers
             {
                 db.Entry(anoserie).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index").Success("Série alterada com sucesso!");
             }
             return View(anoserie);
         }
@@ -112,7 +112,7 @@ namespace DiarioEscolar.Controllers
             AnoSerie anoserie = db.AnoSeries.Find(id);
             db.AnoSeries.Remove(anoserie);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index").Success("Série excluída com sucesso!"); ;
         }
 
         protected override void Dispose(bool disposing)

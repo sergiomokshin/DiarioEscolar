@@ -7,9 +7,16 @@
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/themes/base/css", "~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/flash_message")
+        @Scripts.Render("~/bundles/cookie")
+        
+        @RenderSection("scripts", required: false)
+        
     </head>
     <body>
-        <header>
+        <header>            
+            @Html.Partial("_Flash")
             <div class="content-wrapper">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("Diário Escolar", "Index", "Home")</p>
@@ -48,7 +55,9 @@
             </div>
         </footer>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
+        
+
+
+        
     </body>
 </html>

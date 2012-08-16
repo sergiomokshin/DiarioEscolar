@@ -13,7 +13,7 @@
 
 </style>
 
-<h2>@ViewBag.Materia.Descricao</h2>
+<h2>@ViewBag.AnoSerie.Serie -  @ViewBag.Materia.Descricao</h2>
 
 @using (Html.BeginForm())
 {
@@ -52,7 +52,7 @@
 					Faltas
 				</th>
 				<th>
-					Nota Recuperação    
+					Recup.
 				</th>
 				<th>
 					Total Faltas                
@@ -72,7 +72,8 @@
 			DiarioEscolar.ViewModels.NotaFaltaViewModel notaFaltaTemp = @notaFalta.NotaFaltaViewModel != null ? @notaFalta.NotaFaltaViewModel : ViewBag.notaFaltaDefault;
 			<tr>
 				<td>
-					@notaFalta.NomeAluno
+                    @Html.Label("", @notaFalta.NomeAluno, new { @style = "width: 200px;" })
+					
 					@Html.Hidden("notas[" + contador + "].AlunoId", notaFalta.AlunoId)
 					@Html.Hidden("notas[" + contador + "].MateriaId", notaFalta.MateriaId)
                     @Html.Hidden("notas[" + contador + "].AnoSerieId", notaFalta.AnoSerieId)
@@ -103,7 +104,7 @@
 				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Falta4", notaFaltaTemp.Falta4, new { @style = "width: 30px;" })
 				</td>
 			   <td>
-				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Falta3", notaFaltaTemp.Recuperacao, new { @style = "width: 30px;" })
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Recuperacao", notaFaltaTemp.Recuperacao, new { @style = "width: 30px;" })
 				</td>
 				 <td>
 				   @notaFaltaTemp.TotalFaltas
@@ -126,7 +127,7 @@
 }
 
 <div>
-	@Html.ActionLink("Back to List", "Index", "Home")
+	@Html.ActionLink("Voltar", "Index", "Home")
 </div>
 
 @section Scripts {
