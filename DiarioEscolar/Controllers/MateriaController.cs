@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DiarioEscolar.Models;
+using DiarioEscolar.Helpers;
 
 namespace DiarioEscolar.Controllers
 {
@@ -63,9 +64,7 @@ namespace DiarioEscolar.Controllers
 
             db.Materias.Add(materia);
             db.SaveChanges();
-            return RedirectToAction("Index", new { id = materia.AnoSerie.AnoSerieId });
-
-
+            return RedirectToAction("Index", new { id = materia.AnoSerie.AnoSerieId }).Success("Matéria incluída com sucesso!");
          
         }
 
@@ -94,7 +93,7 @@ namespace DiarioEscolar.Controllers
 
             db.Entry(materia).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index", new { id = materia.AnoSerie.AnoSerieId });
+            return RedirectToAction("Index", new { id = materia.AnoSerie.AnoSerieId }).Success("Matéria alterada com sucesso!");
         }
 
         //
@@ -120,7 +119,7 @@ namespace DiarioEscolar.Controllers
             Materia materia = db.Materias.Find(id);
             db.Materias.Remove(materia);
             db.SaveChanges();
-            return RedirectToAction("Index", new { id = materia.AnoSerie.AnoSerieId });
+            return RedirectToAction("Index", new { id = materia.AnoSerie.AnoSerieId }).Success("Matéria excluída com sucesso!");
         }
 
         protected override void Dispose(bool disposing)

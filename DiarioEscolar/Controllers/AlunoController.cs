@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DiarioEscolar.Helpers;
 using DiarioEscolar.Models;
 
 namespace DiarioEscolar.Controllers
@@ -63,7 +64,7 @@ namespace DiarioEscolar.Controllers
 
             db.Alunos.Add(aluno);
             db.SaveChanges();
-            return RedirectToAction("Index", new { id = aluno.AnoSerie.AnoSerieId });
+            return RedirectToAction("Index", new { id = aluno.AnoSerie.AnoSerieId }).Success("Aluno incluído com sucesso!");
 
         }
 
@@ -92,7 +93,7 @@ namespace DiarioEscolar.Controllers
 
             db.Entry(aluno).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index", new { id = aluno.AnoSerie.AnoSerieId });
+            return RedirectToAction("Index", new { id = aluno.AnoSerie.AnoSerieId }).Success("Aluno alterado com sucesso!");
 
         }
 
@@ -119,7 +120,7 @@ namespace DiarioEscolar.Controllers
             Aluno aluno = db.Alunos.Find(id);
             db.Alunos.Remove(aluno);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index").Success("Aluno excluído com sucesso!");
         }
 
         protected override void Dispose(bool disposing)

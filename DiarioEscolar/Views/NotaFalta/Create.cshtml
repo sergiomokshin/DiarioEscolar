@@ -1,10 +1,10 @@
 ﻿@model DiarioEscolar.Models.NotaFalta
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Novo";
 }
 
-<h2>Create</h2>
+<h2>Novo</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -93,7 +93,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Salvar" />
         </p>
     </fieldset>
 }

@@ -1,10 +1,10 @@
 ﻿@model DiarioEscolar.Models.Materia
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <fieldset>
     <legend>Materia</legend>
@@ -17,6 +17,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.MateriaId }) |
+    @Html.ActionLink("Salvar", "Edit", new { id=Model.MateriaId }) |
     @Html.ActionLink("Voltar", "Index", new { id = ViewBag.AnoSerieId })
 </p>

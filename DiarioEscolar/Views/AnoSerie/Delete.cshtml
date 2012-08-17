@@ -1,12 +1,12 @@
 ﻿@model DiarioEscolar.Models.AnoSerie
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Excluir";
 }
 
-<h2>Delete</h2>
+<h2>Excluir</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Você tem certeza que deseja excluir?</h3>
 <fieldset>
     <legend>AnoSerie</legend>
 
@@ -26,7 +26,7 @@
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
+        <input type="submit" value="Excluir" /> |
         @Html.ActionLink("Voltar", "Index")
     </p>
 }

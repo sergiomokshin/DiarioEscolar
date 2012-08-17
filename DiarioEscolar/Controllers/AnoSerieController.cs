@@ -56,7 +56,7 @@ namespace DiarioEscolar.Controllers
                 anoserie.ProviderUserKey = UserHelper.CurrentProviderUserKey();
                 db.AnoSeries.Add(anoserie);
                 db.SaveChanges();
-                return RedirectToAction("Index").Success("Série incluída com sucesso!"); ;
+                return RedirectToAction("Index").Success("Série incluída com sucesso!");
             }
 
             return View(anoserie);

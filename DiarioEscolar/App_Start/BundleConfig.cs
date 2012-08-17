@@ -18,6 +18,10 @@ namespace DiarioEscolar
                         "~/Scripts/jQuery.flashMessage.js"));
 
 
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                        "~/Scripts/bootstrap/bootstrap.min.js"));
+
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui*"));
 
@@ -29,6 +33,11 @@ namespace DiarioEscolar
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/cssbootstrap").Include("~/Content/bootstrap/css/bootstrap.min.css"));
+
+            //bundles.Add(new StyleBundle("~/Content/cssbootstrap").Include("~/Content/bootstrap/css/bootstrap-responsive.min.css"));
+
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

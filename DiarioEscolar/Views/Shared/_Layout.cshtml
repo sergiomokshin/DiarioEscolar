@@ -5,12 +5,13 @@
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+        @Styles.Render("~/Content/themes/base/css", "~/Content/css", "~/Content/cssbootstrap")
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/flash_message")
         @Scripts.Render("~/bundles/cookie")
-        
+        @Scripts.Render("~/bundles/bootstrap")
+
         @RenderSection("scripts", required: false)
         
     </head>

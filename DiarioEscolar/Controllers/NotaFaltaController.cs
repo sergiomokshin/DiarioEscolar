@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DiarioEscolar.Models;
+using DiarioEscolar.Helpers;
 using DiarioEscolar.ViewModels;
 
 namespace DiarioEscolar.Controllers
@@ -166,7 +167,7 @@ namespace DiarioEscolar.Controllers
 
             db.SaveChanges();
 
-            return View(GridNotas(AnoSerieId, MateriaId));
+            return View(GridNotas(AnoSerieId, MateriaId)).Success("Notas alteradas com sucesso!");
         }
 
         //
