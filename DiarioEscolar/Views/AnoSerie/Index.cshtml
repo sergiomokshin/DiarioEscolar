@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Cadastrar nova série", "Create")
 </p>
-<table class="table">
+<table class="table table-bordered" width="100%">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Ano)
@@ -17,13 +17,11 @@
         <th>
             @Html.DisplayNameFor(model => model.Serie)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProviderUserKey)
-        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Ano)
@@ -32,12 +30,9 @@
             @Html.DisplayFor(modelItem => item.Serie)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ProviderUserKey)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.AnoSerieId }) |
-            @Html.ActionLink("Matérias", "Index", "Materia", new { id=item.AnoSerieId }, null)
-            @Html.ActionLink("Alunos", "Index", "Aluno", new { id = item.AnoSerieId }, null)
+            @Html.ActionLink("Editar", "Edit", new { id = item.AnoSerieId }) |
+            @Html.ActionLink("Matérias", "Index", "Materia", new { id = item.AnoSerieId }, null) | 
+            @Html.ActionLink("Alunos", "Index", "Aluno", new { id = item.AnoSerieId }, null)             
         </td>
     </tr>
 }

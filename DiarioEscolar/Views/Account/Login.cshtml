@@ -1,19 +1,19 @@
 ﻿@model DiarioEscolar.Models.LoginModel
 
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Controle de Acesso";
 }
 
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>Use this form to enter your user name and password.</h2>
+    <h2>Entre com seu usuário e senha para acesso ao sistema.</h2>
 </hgroup>
 
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.ValidationSummary(true, "Log in was unsuccessful. Please correct the errors and try again.")
+    @Html.ValidationSummary(true, "Login inválido, verifique seus dados e tente novamente.")
 
     <fieldset>
-        <legend>Log in Form</legend>
+        <legend>Controle de Acesso</legend>
         <ol>
             <li>
                 @Html.LabelFor(m => m.UserName)
@@ -28,10 +28,10 @@
                 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
             </li>
         </ol>
-        <input type="submit" value="Log in" />
+        <input type="submit" value="Entrar" />
     </fieldset>
     <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
+        @Html.ActionLink("Clique aqui se você não tem uma conta.", "Register")
     </p>
 }
 

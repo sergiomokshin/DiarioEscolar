@@ -16,7 +16,7 @@ namespace DiarioEscolar.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            ViewBag.Message = "Facilitando o trabalho do Professor.";
+            ViewBag.Message = "Ferramenta para facilitar o acompanhamento escolar dos alunos.";
             var providerUserKey = UserHelper.CurrentProviderUserKey();
             var anoSeries = (from ano in db.AnoSeries
                                                  where ano.ProviderUserKey == providerUserKey

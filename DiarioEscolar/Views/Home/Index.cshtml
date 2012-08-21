@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "";
+    bool primeiro = true;
 }
 @section featured {
     <section class="featured">
@@ -9,21 +10,28 @@
                 <h2>@ViewBag.Message</h2>
             </hgroup>
             <p>
-                Ferramenta para facilitar o acompanhamentos escolar dos alunos.
+                
             </p>
         </div>
     </section>
 }
 
 
-@foreach (var anoSerie in ViewBag.AnoSeries){
+@foreach (var anoSerie in ViewBag.AnoSeries)
+{
     
-    <p>
-        <h5>@anoSerie.Serie</h5>
-        @foreach (DiarioEscolar.ViewModels.MateriaViewModel materia in anoSerie.Materias)
-            {           
-                @Html.ActionLink(materia.Descricao, "Edit", "NotaFalta", new { AnoSerieId = anoSerie.AnoSerieId, MateriaId = materia.MateriaId }, null)        
-            }
+     <div class="bloco_anoserie">
+        <h2>@anoSerie.Serie</h2>
 
-    </p>            
+        @foreach (DiarioEscolar.ViewModels.MateriaViewModel materia in anoSerie.Materias)
+        {           
+                if (primeiro)
+                { primeiro = false;}
+                else
+                {@Html.Raw(" - ");
+                }                        
+                @Html.ActionLink(materia.Descricao, "Edit", "NotaFalta", new { AnoSerieId = anoSerie.AnoSerieId, MateriaId = materia.MateriaId }, null)        
+        }
+
+    </div>            
     }

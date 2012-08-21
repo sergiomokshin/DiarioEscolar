@@ -166,8 +166,7 @@ namespace DiarioEscolar.Controllers
             }
 
             db.SaveChanges();
-
-            return View(GridNotas(AnoSerieId, MateriaId)).Success("Notas alteradas com sucesso!");
+            return RedirectToAction("Edit", new { AnoSerieId = AnoSerieId, MateriaId = MateriaId }).Success("Notas e faltas alteradas com sucesso!");
         }
 
         //

@@ -1,23 +1,23 @@
 ﻿@model DiarioEscolar.Models.RegisterModel
 
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Registro";
 }
 
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>Create a new account.</h2>
+    <h2>Criar uma nova conta.</h2>
 </hgroup>
 
 <p class="message-info">
-    Passwords must be at least @Membership.MinRequiredPasswordLength characters long.
+    A senha deve possuir pelo menos @Membership.MinRequiredPasswordLength caracteres.
 </p>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary()
 
     <fieldset>
-        <legend>Registration Form</legend>
+        <legend>Formulárop de registro</legend>
         <ol>
             <li>
                 @Html.LabelFor(m => m.UserName)
@@ -36,7 +36,7 @@
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
         </ol>
-        <input type="submit" value="Register" />
+        <input type="submit" value="Registrar" />
     </fieldset>
 }
 

@@ -72,7 +72,7 @@
 			DiarioEscolar.ViewModels.NotaFaltaViewModel notaFaltaTemp = @notaFalta.NotaFaltaViewModel != null ? @notaFalta.NotaFaltaViewModel : ViewBag.notaFaltaDefault;
 			<tr>
 				<td>
-                    @Html.Label("", @notaFalta.NomeAluno, new { @style = "width: 200px;" })
+                    @notaFalta.NomeAluno
 					
 					@Html.Hidden("notas[" + contador + "].AlunoId", notaFalta.AlunoId)
 					@Html.Hidden("notas[" + contador + "].MateriaId", notaFalta.MateriaId)
@@ -89,7 +89,7 @@
 				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Nota2", notaFaltaTemp.Nota2, new { @style = "width: 30px;" })
 				</td>
 				<td>
-				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Falta2", notaFaltaTemp.Falta1, new { @style = "width: 30px;" })
+				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Falta2", notaFaltaTemp.Falta2, new { @style = "width: 30px;" })
 				</td>
 				 <td>
 				   @Html.TextBox("notas[" + contador + "].NotaFaltaViewModel.Nota3", notaFaltaTemp.Nota3, new { @style = "width: 30px;" })
@@ -121,7 +121,7 @@
 		</table>
 
 		<p>
-			<input type="submit" value="Save" />
+			<input type="submit" value="Salvar" />
 		</p>
 	</fieldset>
 }
