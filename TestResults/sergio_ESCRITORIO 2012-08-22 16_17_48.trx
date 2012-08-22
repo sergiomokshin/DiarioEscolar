@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="713d2864-855e-4eba-bec9-12382ec3a252" name="sergio@ESCRITORIO 2012-08-22 16:17:48" runUser="Escritorio\sergio" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="2bfb6601-999b-4a52-90a5-47a3af1a467c">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment userDeploymentRoot="D:\GitHub\DiarioEscolar\TestResults" useDefaultDeploymentRoot="false" enabled="false" runDeploymentRoot="sergio_ESCRITORIO 2012-08-22 16_17_48">
+      <DeploymentItem filename="C:\Program Files (x86)\NUnit 2.6.1\bin\framework\nunit.mocks.dll" />
+      <DeploymentItem filename="D:\GitHub\DiarioEscolar\packages\WatiN.2.1.0\lib\net40\Interop.SHDocVw.dll" />
+      <DeploymentItem filename="D:\GitHub\DiarioEscolar\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll" />
+      <DeploymentItem filename="D:\GitHub\DiarioEscolar\packages\WatiN.2.1.0\lib\net40\WatiN.Core.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\NUnit 2.6.1\bin\framework\nunit.framework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-08-22T16:17:48.9670000-03:00" queuing="2012-08-22T16:17:49.0350000-03:00" start="2012-08-22T16:17:49.0610000-03:00" finish="2012-08-22T16:18:15.0820000-03:00" />
+  <ResultSummary outcome="Aborted">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CadastrarUmaNovaSerie" storage="d:\github\diarioescolar\diarioescolar.acceptancetests\bin\debug\diarioescolar.acceptancetests.dll" id="8f764d18-4bc0-449a-1460-0e69e095ca70">
+      <Description>Cadastrar uma nova Série</Description>
+      <TestCategory>
+        <TestCategoryItem TestCategory="mytag" />
+      </TestCategory>
+      <Execution id="4f52c184-c47c-4d76-86e6-7963bc0675fd" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>Cadastra de Séries</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="D:/GitHub/DiarioEscolar/DiarioEscolar.AcceptanceTests/bin/Debug/DiarioEscolar.AcceptanceTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DiarioEscolar.AcceptanceTests.Features.CadastraDeSeriesFeature, DiarioEscolar.AcceptanceTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CadastrarUmaNovaSerie" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="8f764d18-4bc0-449a-1460-0e69e095ca70" executionId="4f52c184-c47c-4d76-86e6-7963bc0675fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4f52c184-c47c-4d76-86e6-7963bc0675fd" testId="8f764d18-4bc0-449a-1460-0e69e095ca70" testName="CadastrarUmaNovaSerie" computerName="ESCRITORIO" duration="00:00:20.8970000" startTime="2012-08-22T16:17:49.0760000-03:00" endTime="2012-08-22T16:18:09.9730000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f52c184-c47c-4d76-86e6-7963bc0675fd">
+      <Output>
+        <StdOut>Given Eu estou logado no site Diario Escolar
+-&gt; done: CadastraDeSeriesSteps.GivenEuEstouLogadoNoSiteDiarioEscolar() (7.4s)
+And Estou na página principal
+-&gt; done: CadastraDeSeriesSteps.GivenEstouNaPaginaPrincipal() (0.9s)
+When Eu clico no link Séries
+-&gt; done: CadastraDeSeriesSteps.WhenEuClicoNoLinkSeries() (1.1s)
+And Eu clico no link Cadastrar nova série
+-&gt; done: CadastraDeSeriesSteps.WhenEuClicoNoLinkCadastrarNovaSerie() (1.0s)
+And Eu preencho o formulário com os seguintes campos
+  --- table step argument ---
+  | Field | Value |
+  | Ano   | 2012  |
+  | Serie | 1B    |</StdOut>
+        <ErrorInfo>
+          <Message>User aborted test run.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

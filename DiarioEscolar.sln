@@ -5,7 +5,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiarioEscolar", "DiarioEsco
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiarioEscolar.Tests", "DiarioEscolar.Tests\DiarioEscolar.Tests.csproj", "{5AA4029C-E7D5-4935-9970-A450AF549CFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiarioEscolar.AcceptanceTests", "DiarioEscolar.AcceptanceTests\DiarioEscolar.AcceptanceTests.csproj", "{994CA78C-26F8-4387-BBD0-04F1CD3ECFB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4B484EE1-137E-46EE-837F-97354AA6BE93}"
+	ProjectSection(SolutionItems) = preProject
+		DiarioEscolar.vsmdi = DiarioEscolar.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DiarioEscolar.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -19,6 +31,10 @@ Global
 		{5AA4029C-E7D5-4935-9970-A450AF549CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AA4029C-E7D5-4935-9970-A450AF549CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AA4029C-E7D5-4935-9970-A450AF549CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{994CA78C-26F8-4387-BBD0-04F1CD3ECFB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{994CA78C-26F8-4387-BBD0-04F1CD3ECFB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{994CA78C-26F8-4387-BBD0-04F1CD3ECFB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{994CA78C-26F8-4387-BBD0-04F1CD3ECFB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

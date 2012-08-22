@@ -36,3 +36,4 @@ D:\GitHub\DiarioEscolar\DiarioEscolar\obj\Debug\DiarioEscolar.dll
 D:\GitHub\DiarioEscolar\DiarioEscolar\obj\Debug\DiarioEscolar.pdb
 D:\GitHub\DiarioEscolar\DiarioEscolar\bin\ErikEJ.SqlCeMembership.dll
 D:\GitHub\DiarioEscolar\DiarioEscolar\bin\System.Data.SqlServerCe.dll
+D:\GitHub\DiarioEscolar\DiarioEscolar\bin\TechTalk.SpecFlow.dll

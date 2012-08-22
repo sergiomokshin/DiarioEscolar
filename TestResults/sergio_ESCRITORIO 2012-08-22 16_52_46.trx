@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="14806c56-938c-4807-95fc-eb1b702765af" name="sergio@ESCRITORIO 2012-08-22 16:52:46" runUser="Escritorio\sergio" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="2bfb6601-999b-4a52-90a5-47a3af1a467c">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="sergio_ESCRITORIO 2012-08-22 16_52_46">
+      <DeploymentItem filename="C:\Program Files (x86)\NUnit 2.6.1\bin\framework\nunit.mocks.dll" />
+      <DeploymentItem filename="D:\GitHub\DiarioEscolar\packages\WatiN.2.1.0\lib\net40\Interop.SHDocVw.dll" />
+      <DeploymentItem filename="D:\GitHub\DiarioEscolar\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll" />
+      <DeploymentItem filename="D:\GitHub\DiarioEscolar\packages\WatiN.2.1.0\lib\net40\WatiN.Core.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\NUnit 2.6.1\bin\framework\nunit.framework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-08-22T16:52:46.2020000-03:00" queuing="2012-08-22T16:52:48.0360000-03:00" start="2012-08-22T16:52:48.3500000-03:00" finish="2012-08-22T16:53:54.2940000-03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="ESCRITORIO" outcome="Error" timestamp="2012-08-22T16:53:54.2920000-03:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CadastrarUmaNovaSerie" storage="d:\github\diarioescolar\diarioescolar.acceptancetests\bin\debug\diarioescolar.acceptancetests.dll" id="8f764d18-4bc0-449a-1460-0e69e095ca70">
+      <Description>Cadastrar uma nova Série</Description>
+      <TestCategory>
+        <TestCategoryItem TestCategory="mytag" />
+      </TestCategory>
+      <Execution id="4f8fc324-26e4-42b8-acaa-489de23ad2df" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>Cadastra de Séries</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="D:/GitHub/DiarioEscolar/DiarioEscolar.AcceptanceTests/bin/Debug/DiarioEscolar.AcceptanceTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DiarioEscolar.AcceptanceTests.Features.CadastraDeSeriesFeature, DiarioEscolar.AcceptanceTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CadastrarUmaNovaSerie" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="8f764d18-4bc0-449a-1460-0e69e095ca70" executionId="4f8fc324-26e4-42b8-acaa-489de23ad2df" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4f8fc324-26e4-42b8-acaa-489de23ad2df" testId="8f764d18-4bc0-449a-1460-0e69e095ca70" testName="CadastrarUmaNovaSerie" computerName="ESCRITORIO" duration="00:01:05.7270000" startTime="2012-08-22T16:52:48.5670000-03:00" endTime="2012-08-22T16:53:54.2940000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f8fc324-26e4-42b8-acaa-489de23ad2df">
+    </UnitTestResult>
+  </Results>
+</TestRun>

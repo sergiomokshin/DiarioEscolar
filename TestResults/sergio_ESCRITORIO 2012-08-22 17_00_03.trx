@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="cff71ffe-68e8-4d8b-8aed-3f2136a8437c" name="sergio@ESCRITORIO 2012-08-22 17:00:03" runUser="Escritorio\sergio" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="2bfb6601-999b-4a52-90a5-47a3af1a467c">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment userDeploymentRoot="D:\GitHub\DiarioEscolar\TestResults" useDefaultDeploymentRoot="false" enabled="false" runDeploymentRoot="sergio_ESCRITORIO 2012-08-22 17_00_03">
+      <DeploymentItem filename="C:\Program Files (x86)\NUnit 2.6.1\bin\framework\nunit.mocks.dll" />
+      <DeploymentItem filename="D:\GitHub\DiarioEscolar\packages\WatiN.2.1.0\lib\net40\Interop.SHDocVw.dll" />
+      <DeploymentItem filename="D:\GitHub\DiarioEscolar\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll" />
+      <DeploymentItem filename="D:\GitHub\DiarioEscolar\packages\WatiN.2.1.0\lib\net40\WatiN.Core.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\NUnit 2.6.1\bin\framework\nunit.framework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-08-22T17:00:03.7280000-03:00" queuing="2012-08-22T17:00:03.7990000-03:00" start="2012-08-22T17:00:03.8240000-03:00" finish="2012-08-22T17:00:36.2530000-03:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CadastrarUmaNovaSerie" storage="d:\github\diarioescolar\diarioescolar.acceptancetests\bin\debug\diarioescolar.acceptancetests.dll" id="8f764d18-4bc0-449a-1460-0e69e095ca70">
+      <Description>Cadastrar uma nova Série</Description>
+      <TestCategory>
+        <TestCategoryItem TestCategory="mytag" />
+      </TestCategory>
+      <Execution id="cec7f2ab-25ea-4e84-89ba-5afde7d1cd11" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>Cadastra de Séries</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="D:/GitHub/DiarioEscolar/DiarioEscolar.AcceptanceTests/bin/Debug/DiarioEscolar.AcceptanceTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DiarioEscolar.AcceptanceTests.Features.CadastraDeSeriesFeature, DiarioEscolar.AcceptanceTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CadastrarUmaNovaSerie" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="8f764d18-4bc0-449a-1460-0e69e095ca70" executionId="cec7f2ab-25ea-4e84-89ba-5afde7d1cd11" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="cec7f2ab-25ea-4e84-89ba-5afde7d1cd11" testId="8f764d18-4bc0-449a-1460-0e69e095ca70" testName="CadastrarUmaNovaSerie" computerName="ESCRITORIO" duration="00:00:32.0370602" startTime="2012-08-22T17:00:03.8270000-03:00" endTime="2012-08-22T17:00:36.2270000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cec7f2ab-25ea-4e84-89ba-5afde7d1cd11">
+      <Output>
+        <StdOut>Given Eu estou logado no site Diario Escolar
+-&gt; error: The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+And Estou na página principal
+-&gt; skipped because of previous errors
+When Eu clico no link Séries
+-&gt; skipped because of previous errors
+And Eu clico no link Cadastrar nova série
+-&gt; skipped because of previous errors
+And Eu preencho o formulário com os seguintes campos
+  --- table step argument ---
+  | Field | Value |
+  | Ano   | 2012  |
+  | Serie | 1B    |
+-&gt; skipped because of previous errors
+And Eu clico em Salvar
+-&gt; skipped because of previous errors
+Then Eu devo ser redirecionado para a página de listagem de séries e ver a mensagem "Série incluída com sucesso!"
+-&gt; skipped because of previous errors</StdOut>
+        <ErrorInfo>
+          <Message>Test method DiarioEscolar.AcceptanceTests.Features.CadastraDeSeriesFeature.CadastrarUmaNovaSerie threw exception: 
+System.Runtime.InteropServices.COMException: The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)</Message>
+          <StackTrace>    at mshtml.HTMLDocumentClass.IHTMLDocument2_get_url()
+   at WatiN.Core.Native.InternetExplorer.IEDocument.get_Url()
+   at WatiN.Core.Document.get_Url()
+   at WatiN.Core.Element.get_NativeElement()
+   at WatiN.Core.Element.GetAttributeValueImpl(String attributeName)
+   at WatiN.Core.Component.GetAttributeValue(String attributeName)
+   at WatiN.Core.Element.get_Enabled()
+   at WatiN.Core.Actions.TypeTextAction.CheckIfTypingIsPossibleInThisTextField()
+   at WatiN.Core.Actions.TypeTextAction.TypeAppendClearText(String value, Boolean append, Boolean clear)
+   at WatiN.Core.Actions.TypeTextAction.TypeText(String value)
+   at WatiN.Core.TextField.TypeText(String value)
+   at DiarioEscolar.AcceptanceTests.Steps.CadastraDeSeriesSteps.GivenEuEstouLogadoNoSiteDiarioEscolar() in D:\GitHub\DiarioEscolar\DiarioEscolar.AcceptanceTests\Steps\CadastraDeSeriesSteps.cs:line 17
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at DiarioEscolar.AcceptanceTests.Features.CadastraDeSeriesFeature.ScenarioCleanup() in D:\GitHub\DiarioEscolar\DiarioEscolar.AcceptanceTests\Features\CadastrarSerie.feature.cs:line 0
+   at DiarioEscolar.AcceptanceTests.Features.CadastraDeSeriesFeature.CadastrarUmaNovaSerie() in d:\GitHub\DiarioEscolar\DiarioEscolar.AcceptanceTests\Features\CadastrarSerie.feature:line 16
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

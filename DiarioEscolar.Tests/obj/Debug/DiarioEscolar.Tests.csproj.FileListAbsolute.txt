@@ -36,3 +36,7 @@ D:\GitHub\DiarioEscolar\DiarioEscolar.Tests\bin\Debug\EntityFramework.xml
 D:\GitHub\DiarioEscolar\DiarioEscolar.Tests\obj\Debug\ResolveAssemblyReference.cache
 D:\GitHub\DiarioEscolar\DiarioEscolar.Tests\obj\Debug\DiarioEscolar.Tests.dll
 D:\GitHub\DiarioEscolar\DiarioEscolar.Tests\obj\Debug\DiarioEscolar.Tests.pdb
+D:\GitHub\DiarioEscolar\DiarioEscolar.Tests\bin\Debug\nunit.framework.dll
+D:\GitHub\DiarioEscolar\DiarioEscolar.Tests\bin\Debug\nunit.mocks.dll
+D:\GitHub\DiarioEscolar\DiarioEscolar.Tests\bin\Debug\TechTalk.SpecFlow.dll
+D:\GitHub\DiarioEscolar\DiarioEscolar.Tests\bin\Debug\nunit.framework.xml
